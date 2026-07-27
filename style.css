@@ -2,58 +2,65 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background:
-        linear-gradient(rgba(0,120,190,0.6), rgba(0,30,70,0.9)),
-        url("ocean.jpg");
+    background-image: url("ocean.jpg");
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     color: white;
     text-align: center;
-    overflow-x: hidden;
-}
-
-.app {
-    padding: 25px;
     min-height: 100vh;
 }
 
+.app {
+    padding: 20px;
+    min-height: 100vh;
+    background: rgba(0, 40, 80, 0.25);
+}
+
 h1 {
-    font-size: 30px;
-    margin-bottom: 20px;
+    font-size: 32px;
+    margin-top: 15px;
+    text-shadow: 0 0 10px #00d9ff;
 }
 
 #points {
-    font-size: 26px;
+    font-size: 28px;
     margin: 20px;
+}
+
+.fish-box {
+    width: 250px;
+    height: 250px;
+    margin: 20px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid rgba(255,255,255,0.7);
+    box-shadow: 0 0 30px #00eaff;
+    background: rgba(0,100,180,0.4);
 }
 
 #fish {
-    width: 240px;
-    height: 240px;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-    cursor: pointer;
-    transition: transform 0.2s;
-    filter: drop-shadow(0 0 15px rgba(255,255,255,0.4));
-}
-
-#fish:active {
-    transform: scale(0.88) rotate(-3deg);
 }
 
 #tap {
-    display: block;
-    margin: 20px auto;
-    padding: 15px 55px;
-    font-size: 22px;
-    border-radius: 35px;
+    padding: 15px 60px;
+    font-size: 25px;
+    border-radius: 40px;
     border: none;
-    cursor: pointer;
     background: white;
+    color: #003b66;
+    box-shadow: 0 5px 15px #0008;
 }
 
 #energy {
-    font-size: 20px;
     margin: 20px;
+    font-size: 20px;
+    background: rgba(0,0,0,0.3);
+    padding: 10px;
+    border-radius: 20px;
 }
 
 .menu {
@@ -64,8 +71,9 @@ h1 {
 }
 
 .menu button {
-    padding: 12px 20px;
-    border-radius: 25px;
+    padding: 15px 25px;
+    border-radius: 30px;
     border: none;
-    font-size: 16px;
+    font-size: 17px;
+    background: rgba(255,255,255,0.9);
 }
