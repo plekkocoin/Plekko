@@ -1,9 +1,13 @@
-let points = 0;
-let energy = 500;
+let points = Number(localStorage.getItem("plekko_points")) || 0;
+let energy = Number(localStorage.getItem("plekko_energy")) || 500;
 
 const fish = document.getElementById("fish");
 const pointBox = document.getElementById("points");
 const energyBox = document.getElementById("energy");
+
+pointBox.innerHTML = "🐟 " + points + " Points";
+energyBox.innerHTML = "⚡ Energy: " + energy + "/500";
+
 
 fish.onclick = function(e) {
 
@@ -13,6 +17,11 @@ fish.onclick = function(e) {
 
     points++;
     energy--;
+
+    // ذخیره اطلاعات
+    localStorage.setItem("plekko_points", points);
+    localStorage.setItem("plekko_energy", energy);
+
 
     pointBox.innerHTML = "🐟 " + points + " Points";
     energyBox.innerHTML = "⚡ Energy: " + energy + "/500";
@@ -26,7 +35,7 @@ fish.onclick = function(e) {
     }, 120);
 
 
-    // حباب شناور
+    // حباب
     let bubble = document.createElement("div");
     bubble.innerHTML = "🫧";
 
