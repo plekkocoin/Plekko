@@ -32,7 +32,9 @@ fish.onclick = function(e) {
 
     // ارسال امتیاز به ربات
     if (userId) {
-        fetch("https://firms-bubble-ended-celebration.trycloudflare.com/add_point", {
+       
+console.log("SENDING POINT", userId);
+ fetch("https://firms-bubble-ended-celebration.trycloudflare.com/add_point", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
