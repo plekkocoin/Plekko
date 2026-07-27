@@ -40,9 +40,12 @@ h1 {
 }
 
 #fish {
-    width: 100%;
-    height: 100%;
+    width: 150px;
+    height: 150px;
     object-fit: contain;
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 50%;
 }
 
 #tap {
