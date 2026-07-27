@@ -5,6 +5,7 @@ tg.ready();
 
 const telegramUser = tg.initDataUnsafe.user;
 const userId = telegramUser ? telegramUser.id : null;let points = Number(localStorage.getItem("plekko_points")) || 0;
+alert("Plekko ID: " + userId);
 let energy = Number(localStorage.getItem("plekko_energy")) || 500;
 
 const fish = document.getElementById("fish");
@@ -31,7 +32,7 @@ fish.onclick = function(e) {
 
     // ارسال امتیاز به ربات
     if (userId) {
-        fetch("http://127.0.0.1:8080/add_point", {
+        fetch("https://learners-tracked-pocket-versus.trycloudflare.com/add_point", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
