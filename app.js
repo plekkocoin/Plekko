@@ -1,4 +1,10 @@
-let points = Number(localStorage.getItem("plekko_points")) || 0;
+
+
+const tg = window.Telegram.WebApp;
+tg.ready();
+
+const telegramUser = tg.initDataUnsafe.user;
+const userId = telegramUser ? telegramUser.id : null;let points = Number(localStorage.getItem("plekko_points")) || 0;
 let energy = Number(localStorage.getItem("plekko_energy")) || 500;
 
 const fish = document.getElementById("fish");
