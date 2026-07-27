@@ -14,8 +14,9 @@ fish.onclick = function(e) {
     points++;
     energy--;
 
-    pointBox.innerHTML = "⭐ " + points + " Points";
+    pointBox.innerHTML = "🐟 " + points + " Points";
     energyBox.innerHTML = "⚡ Energy: " + energy + "/500";
+
 
     // حرکت ماهی
     fish.style.transform = "scale(0.85) rotate(-5deg)";
@@ -25,17 +26,20 @@ fish.onclick = function(e) {
     }, 120);
 
 
-    // ساخت امتیاز شناور
-    let plus = document.createElement("div");
-    plus.innerHTML = "+1 🐟";
-    plus.style.position = "absolute";
-    plus.style.left = e.clientX + "px";
-    plus.style.top = e.clientY + "px";
-    plus.style.fontSize = "25px";
+    // حباب شناور
+    let bubble = document.createElement("div");
+    bubble.innerHTML = "🫧";
 
-    document.body.appendChild(plus);
+    bubble.style.position = "absolute";
+    bubble.style.left = e.clientX + "px";
+    bubble.style.top = e.clientY + "px";
+    bubble.style.fontSize = "30px";
+    bubble.style.pointerEvents = "none";
+
+    document.body.appendChild(bubble);
 
     setTimeout(() => {
-        plus.remove();
-    }, 700);
+        bubble.remove();
+    }, 1000);
+
 };
