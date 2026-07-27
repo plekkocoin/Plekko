@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#0077be, #001f3f);
+    color: white;
+    text-align: center;
+}
+
+.app {
+    padding: 25px;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+#points {
+    font-size: 24px;
+    margin: 20px;
+}
+
+#fish {
+    width: 220px;
+    height: 220px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#fish:active {
+    transform: scale(0.9);
+}
+
+#tap {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 50px;
+    font-size: 22px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+#energy {
+    font-size: 18px;
+    margin: 20px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px;
+}
+
+.menu button {
+    padding: 12px;
+    border-radius: 20px;
+    border: none;
+    font-size: 15px;
+}
