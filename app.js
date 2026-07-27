@@ -24,9 +24,30 @@ fish.onclick = function(e) {
     points++;
     energy--;
 
-    // ذخیره اطلاعات
+    // ذخیره در گوشی
     localStorage.setItem("plekko_points", points);
     localStorage.setItem("plekko_energy", energy);
+
+
+    // ارسال امتیاز به ربات
+    if (userId) {
+        fetch("http://127.0.0.1:8080/add_point", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                uid: String(userId)
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log("Point saved:", data);
+        })
+        .catch(error => {
+            console.log("API Error:", error);
+        });
+    }
 
 
     pointBox.innerHTML = "🐟 " + points + " Points";
