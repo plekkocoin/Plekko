@@ -2,62 +2,70 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(#0077be, #001f3f);
+    background:
+        linear-gradient(rgba(0,120,190,0.6), rgba(0,30,70,0.9)),
+        url("ocean.jpg");
+    background-size: cover;
+    background-position: center;
     color: white;
     text-align: center;
+    overflow-x: hidden;
 }
 
 .app {
     padding: 25px;
+    min-height: 100vh;
 }
 
 h1 {
-    font-size: 28px;
+    font-size: 30px;
     margin-bottom: 20px;
 }
 
 #points {
-    font-size: 24px;
+    font-size: 26px;
     margin: 20px;
 }
 
 #fish {
-    width: 220px;
-    height: 220px;
+    width: 240px;
+    height: 240px;
     object-fit: contain;
     cursor: pointer;
-    transition: 0.2s;
+    transition: transform 0.2s;
+    filter: drop-shadow(0 0 15px rgba(255,255,255,0.4));
 }
 
 #fish:active {
-    transform: scale(0.9);
+    transform: scale(0.88) rotate(-3deg);
 }
 
 #tap {
     display: block;
     margin: 20px auto;
-    padding: 15px 50px;
+    padding: 15px 55px;
     font-size: 22px;
-    border-radius: 30px;
+    border-radius: 35px;
     border: none;
     cursor: pointer;
+    background: white;
 }
 
 #energy {
-    font-size: 18px;
+    font-size: 20px;
     margin: 20px;
 }
 
 .menu {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
     margin: 15px;
 }
 
 .menu button {
-    padding: 12px;
-    border-radius: 20px;
+    padding: 12px 20px;
+    border-radius: 25px;
     border: none;
-    font-size: 15px;
+    font-size: 16px;
 }
