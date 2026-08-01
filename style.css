@@ -5,7 +5,7 @@ box-sizing:border-box;
 body{
 margin:0;
 font-family:Arial;
-background-image:url("ocean.png");
+background-image:url("ocean.png?v=2");
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
