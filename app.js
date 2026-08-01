@@ -1,84 +1,75 @@
+import * as THREE from 
+"https://unpkg.com/three@0.160.0/build/three.module.js";
+
+import { GLTFLoader } from 
+"https://unpkg.com/three@0.160.0/examples/jsm/loaders/GLTFLoader.js";
 
 
-const tg = window.Telegram.WebApp;
-tg.ready();
+const scene = new THREE.Scene();
 
-const telegramUser = tg.initDataUnsafe.user;
-const userId = telegramUser ? telegramUser.id : null;let points = Number(localStorage.getItem("plekko_points")) || 0;
-alert("Plekko ID: " + userId);
-let energy = Number(localStorage.getItem("plekko_energy")) || 500;
+const camera = new THREE.PerspectiveCamera(
+45,
+window.innerWidth / window.innerHeight,
+0.1,
+1000
+);
 
-const fish = document.getElementById("fish");
-const pointBox = document.getElementById("points");
-const energyBox = document.getElementById("energy");
+const renderer = new THREE.WebGLRenderer({
+alpha:true,
+antialias:true
+});
 
-pointBox.innerHTML = "🐟 " + points + " Points";
-energyBox.innerHTML = "⚡ Energy: " + energy + "/500";
+renderer.setSize(
+window.innerWidth,
+350
+);
 
-
-fish.onclick = function(e) {
-
-    if (energy <= 0) {
-        return;
-    }
-
-    points++;
-    energy--;
-
-    // ذخیره در گوشی
-    localStorage.setItem("plekko_points", points);
-    localStorage.setItem("plekko_energy", energy);
+document
+.getElementById("fish3d")
+.appendChild(renderer.domElement);
 
 
-    // ارسال امتیاز به ربات
-    if (userId) {
+const light = new THREE.HemisphereLight(
+0xffffff,
+0x004466,
+3
+);
 
-console.log("SENDING POINT", userId);
- fetch("https://southern-steam-answered-dependence.trycloudflare.com/add_point", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                uid: String(userId)
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log("Point saved:", data);
-        })
-        .catch(error => {
-            console.log("API Error:", error);
-        });
-    }
+scene.add(light);
 
 
-    pointBox.innerHTML = "🐟 " + points + " Points";
-    energyBox.innerHTML = "⚡ Energy: " + energy + "/500";
+const loader = new GLTFLoader();
+
+loader.load(
+"models/plekko.glb",
+function(gltf){
+
+const fish = gltf.scene;
+
+fish.scale.set(
+1.5,
+1.5,
+1.5
+);
+
+scene.add(fish);
+
+animate();
+
+}
+);
 
 
-    // حرکت ماهی
-    fish.style.transform = "scale(0.85) rotate(-5deg)";
-
-    setTimeout(() => {
-        fish.style.transform = "scale(1) rotate(0deg)";
-    }, 120);
+camera.position.z = 5;
 
 
-    // حباب
-    let bubble = document.createElement("div");
-    bubble.innerHTML = "🫧";
+function animate(){
 
-    bubble.style.position = "absolute";
-    bubble.style.left = e.clientX + "px";
-    bubble.style.top = e.clientY + "px";
-    bubble.style.fontSize = "30px";
-    bubble.style.pointerEvents = "none";
+requestAnimationFrame(animate);
 
-    document.body.appendChild(bubble);
+renderer.render(
+scene,
+camera
+);
 
-    setTimeout(() => {
-        bubble.remove();
-    }, 1000);
-
-};
+}

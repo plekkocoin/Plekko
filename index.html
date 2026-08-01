@@ -2,46 +2,85 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Plekko Ocean</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="app">
+<div class="ocean">
 
+<div class="top">
+<button>🔊</button>
 <h1>🐟 Plekko Ocean</h1>
-
-<div id="points">
-🐟 0 Points
+<button>☰</button>
 </div>
 
-<img id="fish" src="plekko.png">
+<div class="points">
+⭐ <span id="points">0</span> Points
+</div>
 
-<button id="tap">
+<div class="fish-area">
+<div id="fish3d"></div>
+</div>
+
+<button class="tap">
 🌊 TAP
 </button>
 
-<div id="energy">
-⚡ Energy: 500/500
+<div class="gain">
+⭐ +1 Point
 </div>
+
+
+<div class="energy">
+⚡ Energy
+<div class="bar">
+<div class="fill"></div>
+</div>
+500 / 500
+</div>
+
 
 <div class="menu">
-<button>🎯 Tasks</button>
-<button>👥 Invite</button>
+
+<button>
+🎯
+<br>
+Tasks
+</button>
+
+<button>
+👥
+<br>
+Invite
+</button>
+
+<button>
+🏆
+<br>
+Rank
+</button>
+
+<button>
+🎁
+<br>
+Rewards
+</button>
+
+<button>
+👥
+<br>
+Community
+</button>
+
 </div>
 
-<div class="menu">
-<button>🏆 Rank</button>
-<button>🎁 Rewards</button>
 </div>
 
-</div>
 
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
-<script src="app.js"></script>
+<script type="module" src="app.js"></script>
 
 </body>
 </html>
-
