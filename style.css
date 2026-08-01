@@ -4,7 +4,7 @@ box-sizing:border-box;
 
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial,sans-serif;
 background-image:url("ocean.png?v=2");
 background-size:cover;
 background-position:center;
@@ -14,121 +14,88 @@ color:white;
 
 .ocean{
 min-height:100vh;
-background:
-linear-gradient(#004b80aa,#001020),
-url("ocean.png");
-background-size:cover;
-padding:20px;
+padding:15px;
 }
-
-
-.top{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.top button{
-width:60px;
-height:60px;
-border-radius:50%;
-font-size:25px;
-background:#008cff55;
-border:1px solid #55dfff;
-color:white;
-}
-
-
-h1{
-font-size:42px;
-text-shadow:0 0 15px cyan;
-}
-
 
 .points{
 text-align:center;
-font-size:45px;
+font-size:28px;
 font-weight:bold;
-margin:20px;
+margin-top:10px;
+text-shadow:0 0 10px cyan;
 }
 
-
 .fish-area{
-height:380px;
+height:320px;
 display:flex;
 align-items:center;
 justify-content:center;
 }
 
-
-#fish{
-width:330px;
-filter:drop-shadow(0 0 20px #00ffff);
+#fish3d{
+width:280px;
+filter:drop-shadow(0 0 18px cyan);
 }
-
 
 .tap{
 display:block;
-margin:auto;
-width:300px;
-height:110px;
-border-radius:60px;
-font-size:45px;
+margin:10px auto;
+width:180px;
+height:65px;
+border-radius:40px;
+font-size:25px;
 font-weight:bold;
 color:white;
-background:#009dff88;
-border:3px solid #50eaff;
-box-shadow:0 0 30px cyan;
+background:#008cffaa;
+border:2px solid #55eaff;
+box-shadow:0 0 20px cyan;
 }
-
 
 .gain{
-text-align:center;
-font-size:25px;
-margin:20px;
+display:none;
 }
-
 
 .energy{
+margin:15px auto;
+max-width:320px;
 display:flex;
 align-items:center;
-gap:15px;
-padding:20px;
-border-radius:40px;
+gap:10px;
+padding:12px;
+border-radius:25px;
 background:#00395caa;
-font-size:25px;
+font-size:16px;
 }
-
 
 .bar{
 flex:1;
-height:20px;
+height:12px;
 background:#002040;
 border-radius:20px;
 overflow:hidden;
 }
 
-
 .fill{
 width:100%;
 height:100%;
-background:#00cfff;
+background:#00dfff;
 }
-
 
 .menu{
 display:flex;
-justify-content:space-around;
-margin-top:25px;
+justify-content:center;
+gap:8px;
+margin-top:20px;
 }
 
-
 .menu button{
-width:90px;
-height:90px;
-border-radius:20px;
-background:#00558aaa;
+width:58px;
+height:58px;
+border-radius:18px;
+background:#00558acc;
 border:1px solid cyan;
 color:white;
-font-size:16px;
+font-size:11px;
+padding:3px;
+box-shadow:0 0 10px #00ffff66;
 }
