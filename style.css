@@ -5,7 +5,10 @@ box-sizing:border-box;
 body{
 margin:0;
 font-family:Arial;
-background:#001b36;
+background-image:url("ocean.png");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
 color:white;
 }
 
@@ -13,7 +16,7 @@ color:white;
 min-height:100vh;
 background:
 linear-gradient(#004b80aa,#001020),
-url("ocean.jpg");
+url("ocean.png");
 background-size:cover;
 padding:20px;
 }
